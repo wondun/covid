@@ -27,10 +27,10 @@ let span=document.querySelector(".span")
 
     res["Poland"].reverse().forEach(({ date, confirmed, recovered, deaths }) =>{
     let table=document.querySelector(".table")
-    table.innerHTML+=`<div class="date"> ${date} </div>`;
-    table.innerHTML+=`<div class="confirmed"> ${confirmed} </div>`;
-    table.innerHTML+=`<div class="recovered"> ${recovered} </div>`;
-    table.innerHTML+=`<div class="deaths"> ${deaths} </div>`;}
+    table.innerHTML+=`Na dzień: ${date} w Polsce: <br />`;
+    table.innerHTML+=`Potwierdzone przypadki: ${confirmed}  <br />`;
+    table.innerHTML+=`Wyleczonych: ${recovered}  <br />`;
+    table.innerHTML+=`Zgony: ${deaths}  <br />`;}
     );
   }
 )
