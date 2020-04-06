@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVID-19 STATS</title>
+</head>
+<body>
+<style>
+body{
+color: indianred;
+background-color: indigo;
+font-size: 40px;
+}
+</style>
+<div></div>
+    <script>
+   fetch("https://pomber.github.io/covid19/timeseries.json").then(res=>res.json()).then(res=>{
+const { date, confirmed, deaths, recovered } = res.Poland[res.Poland.length - 1];
+    document.getElementsByTagName("div")[0].innerHTML+=`Na dzień: ${date} w Polsce: <br />`;
+    document.getElementsByTagName("div")[0].innerHTML+=`Potwierdzone przypadki: ${confirmed} <br />`;
+    document.getElementsByTagName("div")[0].innerHTML+=`Wyleczonych: ${recovered} <br />`;
+    document.getElementsByTagName("div")[0].innerHTML+=`Zgony: ${deaths} <br />`;
+})
+
+</script>
+
+</body>
+</html>
