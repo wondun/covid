@@ -1,28 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>COVID-19 STATS</title>
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<style>
-body{
-color: indianred;
-background-color: indigo;
-font-size: 40px;
-}
-</style>
-<div></div>
-    <script>
+
+<div class="latest">
+  <div class="container">
+      <div class="span"></div>
+      <img src="map.png" alt="Poland map"> 
+  </div>
+</div>
+<div class="table"></div>
+<script>
    fetch("https://pomber.github.io/covid19/timeseries.json").then(res=>res.json()).then(res=>{
 const { date, confirmed, deaths, recovered } = res.Poland[res.Poland.length - 1];
-    document.getElementsByTagName("div")[0].innerHTML+=`Na dzień: ${date} w Polsce: <br />`;
-    document.getElementsByTagName("div")[0].innerHTML+=`Potwierdzone przypadki: ${confirmed} <br />`;
-    document.getElementsByTagName("div")[0].innerHTML+=`Wyleczonych: ${recovered} <br />`;
-    document.getElementsByTagName("div")[0].innerHTML+=`Zgony: ${deaths} <br />`;
-})
+let span=document.querySelector(".span")
+    span.innerHTML+=`Na dzień: ${date} w Polsce: <br />`;
+    span.innerHTML+=`Potwierdzone przypadki: ${confirmed}  <br />`;
+    span.innerHTML+=`Wyleczonych: ${recovered}  <br />`;
+    span.innerHTML+=`Zgony: ${deaths}  <br />`;
 
+    res["Poland"].reverse().forEach(({ date, confirmed, recovered, deaths }) =>{
+    let table=document.querySelector(".table")
+    table.innerHTML+=`<div class="date"> ${date} </div>`;
+    table.innerHTML+=`<div class="confirmed"> ${confirmed} </div>`;
+    table.innerHTML+=`<div class="recovered"> ${recovered} </div>`;
+    table.innerHTML+=`<div class="deaths"> ${deaths} </div>`;}
+    );
+  }
+)
 </script>
 
 </body>

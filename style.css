@@ -1,0 +1,27 @@
+body{
+    color: indianred;
+    background-color: indigo;
+    font-size: 40px;
+    }
+    .latest{
+    float: left;
+    width: 100%;
+      height: auto;
+    
+    }
+    .container {
+      position: relative;
+      text-align: center;
+      color: white;
+    }
+    .span {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 90%;
+    }
+    .table
+    {
+      clear: both;
+    }
