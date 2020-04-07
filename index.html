@@ -18,7 +18,6 @@
         <tr>
           <th>Data</th>
           <th>Liczba przypadków</th>
-          <th>Przyrost</th>
           <th>Zgony</th>
           <th>Wyleczonych</th>
         </tr>
@@ -40,8 +39,7 @@
     let table=document.querySelector("table")
     table.innerHTML+=`<tr>
     <td> ${date} </td>
-    <td> ${confirmed} </td>
-    <td> PRZYROST </td>
+    <td> ${confirmed} (+123) </td>
     <td> ${deaths} </td>
     <td> ${recovered} </td>
     </tr>`;}
