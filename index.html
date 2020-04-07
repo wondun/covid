@@ -9,28 +9,42 @@
 </head>
 <body>
 
-<div class="latest">
-  <div class="container">
-      <div class="span"></div>
-      <img src="map.png" alt="Poland map"> 
+  <h1>Statystyka dotycząca korona wirusa w Polsce</h1>
+  <div class="latest"></div>
+
+  <div class="DescriptionBox">
+    <div class="table">
+      <table>
+        <tr>
+          <th>Data</th>
+          <th>Liczba przypadków</th>
+          <th>Przyrost</th>
+          <th>Zgony</th>
+          <th>Wyleczonych</th>
+        </tr>
+       </table>
+      </div>
   </div>
-</div>
-<div class="table"></div>
+
+
 <script>
    fetch("https://pomber.github.io/covid19/timeseries.json").then(res=>res.json()).then(res=>{
-const { date, confirmed, deaths, recovered } = res.Poland[res.Poland.length - 1];
-let span=document.querySelector(".span")
-    span.innerHTML+=`Na dzień: ${date} w Polsce: <br />`;
-    span.innerHTML+=`Potwierdzone przypadki: ${confirmed}  <br />`;
-    span.innerHTML+=`Wyleczonych: ${recovered}  <br />`;
-    span.innerHTML+=`Zgony: ${deaths}  <br />`;
+    const { date, confirmed, deaths, recovered } = res.Poland[res.Poland.length - 1];
+    let span=document.querySelector(".latest")
+    span.innerHTML+=`<div class="date"> Stan na dzień: <span> ${date}</span </div>
+    <div class="confirmed"> ${confirmed} (+123) </div>
+    <div class="recovered"> ${recovered} </div>
+    <div class="deaths"> ${deaths} </div>`;
 
     res["Poland"].reverse().forEach(({ date, confirmed, recovered, deaths }) =>{
-    let table=document.querySelector(".table")
-    table.innerHTML+=`Na dzień: ${date} w Polsce: <br />`;
-    table.innerHTML+=`Potwierdzone przypadki: ${confirmed}  <br />`;
-    table.innerHTML+=`Wyleczonych: ${recovered}  <br />`;
-    table.innerHTML+=`Zgony: ${deaths}  <br />`;}
+    let table=document.querySelector("table")
+    table.innerHTML+=`<tr>
+    <td> ${date} </td>
+    <td> ${confirmed} </td>
+    <td> PRZYROST </td>
+    <td> ${deaths} </td>
+    <td> ${recovered} </td>
+    </tr>`;}
     );
   }
 )
