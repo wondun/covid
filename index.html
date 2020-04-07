@@ -29,23 +29,30 @@
 <script>
    fetch("https://pomber.github.io/covid19/timeseries.json").then(res=>res.json()).then(res=>{
     const { date, confirmed, deaths, recovered } = res.Poland[res.Poland.length - 1];
+    const difference = res.Poland[res.Poland.length - 1].confirmed - res.Poland[res.Poland.length - 2].confirmed;
+    
     let span=document.querySelector(".latest")
     span.innerHTML+=`<div class="date"> Stan na dzień: <span> ${date}</span </div>
-    <div class="confirmed"> ${confirmed} (+123) </div>
+    <div class="confirmed"> ${confirmed} (+${difference}) </div>
     <div class="recovered"> ${recovered} </div>
     <div class="deaths"> ${deaths} </div>`;
-
+    
     res["Poland"].reverse().forEach(({ date, confirmed, recovered, deaths }) =>{
     let table=document.querySelector("table")
     table.innerHTML+=`<tr>
     <td> ${date} </td>
-    <td> ${confirmed} (+123) </td>
+    <td> ${confirmed} (+${difference}) </td>
     <td> ${deaths} </td>
     <td> ${recovered} </td>
-    </tr>`;}
-    );
+    </tr>`;
+    });
+
+
+  
   }
 )
+
+
 </script>
 
 </body>
