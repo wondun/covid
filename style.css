@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+*
+{
+    box-sizing: border-box;
+}
+body
+{
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0 30px;
+    color: white;
+    background-color: black;
+}
+h1
+{
+ 
+}
+.latest
+{
+    display: grid;
+    width: 30vh;
+    height: 100vh;
+    grid-template-rows: 20px 1fr 1fr 1fr;
+}
+.todayBox
+{
+    padding: 30px;
+    border: 1px solid white;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    font-size: 28px;
+}
+.todayInfo
+{
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: calc(100% + 2px);
+    height: 50%;
+    border-radius: 10px;
+    padding: 28px;
+    color: black;
+    background-color: white;
+}
+.todayConfirmedBox
+{
+    border-color: #00FF85;
+}
+.todayConfirmedInfo
+{
+    background-color: #00FF85;
+}
+.todayRecoveredBox
+{
+    border-color: #00B2FF;
+}
+.todayRecoveredInfo
+{
+    background-color: #00B2FF;
+}
+.todayDeadBox
+{
+    border-color: #FF003D;
+}
+.todayDeadInfo
+{
+    background-color: #FF003D;
+}
+.DescriptionBox
+{
+    display: block
+}

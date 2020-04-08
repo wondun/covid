@@ -32,10 +32,26 @@
     const difference = res.Poland[res.Poland.length - 1].confirmed - res.Poland[res.Poland.length - 2].confirmed;
     
     let span=document.querySelector(".latest")
-    span.innerHTML+=`<div class="date"> Stan na dzień: <span> ${date}</span </div>
-    <div class="confirmed"> ${confirmed} (+${difference}) </div>
-    <div class="recovered"> ${recovered} </div>
-    <div class="deaths"> ${deaths} </div>`;
+    span.innerHTML+=` <div class="dateDiv"> Stan na dzień: <span class="date">${date}</span </div>
+      <div class="todayBox todayConfirmedBox">
+          Liczba przypadków
+          <div class="todayInfo todayConfirmedInfo">
+            ${confirmed} (+${difference})
+          </div>
+      </div>
+      <div class="todayBox todayRecoveredBox">
+          Wyleczonych
+          <div class="todayInfo todayRecoveredInfo">
+            ${recovered}
+          </div>
+      </div>
+      <div class="todayBox todayDeadBox">
+          Zgony
+          <div class="todayInfo todayDeadInfo">
+            ${deaths}
+          </div>
+      </div>
+      `;
     
     res["Poland"].reverse().forEach(({ date, confirmed, recovered, deaths }) =>{
     let table=document.querySelector("table")
@@ -46,13 +62,8 @@
     <td> ${recovered} </td>
     </tr>`;
     });
-
-
-  
   }
 )
-
-
 </script>
 
 </body>
