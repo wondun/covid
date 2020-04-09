@@ -99,3 +99,8 @@ body
 {
     color: #00B2FF;
 }
+.table{
+    overflow-y: scroll;
+    height: 75vh;
+    width: 70vw;
+}
