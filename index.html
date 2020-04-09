@@ -29,26 +29,28 @@
 <script>
    fetch("https://pomber.github.io/covid19/timeseries.json").then(res=>res.json()).then(res=>{
     const { date, confirmed, deaths, recovered } = res.Poland[res.Poland.length - 1];
-    const difference = res.Poland[res.Poland.length - 1].confirmed - res.Poland[res.Poland.length - 2].confirmed;
+    const differenceC = res.Poland[res.Poland.length - 1].confirmed - res.Poland[res.Poland.length - 2].confirmed;
+    const differenceR = res.Poland[res.Poland.length - 1].recovered - res.Poland[res.Poland.length - 2].recovered;
+    const differenceD = res.Poland[res.Poland.length - 1].deaths - res.Poland[res.Poland.length - 2].deaths;
     
     let span=document.querySelector(".latest")
     span.innerHTML+=` <div class="dateDiv"> Stan na dzień: <span class="date">${date}</span </div>
       <div class="todayBox todayConfirmedBox">
           Zakażeni
           <div class="todayInfo todayConfirmedInfo">
-            ${confirmed} (+${difference})
+            ${confirmed} (+${differenceC})
           </div>
       </div>
       <div class="todayBox todayRecoveredBox">
           Wyleczeni
           <div class="todayInfo todayRecoveredInfo">
-            ${recovered}
+            ${recovered} (+${differenceR})
           </div>
       </div>
       <div class="todayBox todayDeadBox">
           Zgony
           <div class="todayInfo todayDeadInfo">
-            ${deaths}
+            ${deaths} (+${differenceD})
           </div>
       </div>
       `;
