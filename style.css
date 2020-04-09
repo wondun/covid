@@ -10,57 +10,57 @@ body
     padding: 0 30px;
     color: white;
     background-color: black;
-}
-h1
-{
-    
+    font-size: 2.5vh;
 }
 .latest
 {
     display: grid;
     width: 30vh;
-    height: 100vh;
+    height: 80vh;
     grid-template-rows: 20px 1fr 1fr 1fr;
+    position: fixed;
+    left: 30px;
+}
+.date
+{
+    color: #00FF85;
 }
 .todayBox
 {
-    padding: 30px;
+    padding: 3vh;
     border: 1px solid white;
     border-radius: 10px;
     text-align: center;
     position: relative;
-    font-size: 28px;
-    margin-bottom: 70px;
+    margin: 20px 0;
 }
 .todayInfo
 {
     position: absolute;
-    bottom: -40px;
+    bottom: -1px;
     left: 0;
     width: calc(100% + 2px);
     height: 50%;
     border-radius: 10px;
-    padding: 28px;
+    padding: 2.5vh;
     color: black;
     background-color: white;
 }
 .todayConfirmedBox
 {
-    border-color: #00B2FF;
-    margin-top: 40px;
+    border-color: #00FF85;
 }
 .todayConfirmedInfo
 {
-    background-color: #00B2FF;
+    background-color: #00FF85;
 }
 .todayRecoveredBox
 {
-    border-color: #00FF85;
-
+    border-color: #00B2FF;
 }
 .todayRecoveredInfo
 {
-    background-color: #00FF85;
+    background-color: #00B2FF;
 }
 .todayDeadBox
 {
@@ -72,9 +72,30 @@ h1
 }
 .DescriptionBox
 {
-    display: block
+    position: absolute;
+    left: calc(30vh + 50px);
+    width: calc(100vw - 30vh - 30px);
+    text-align: center;
 }
-
-table, th, td {
-    border: 1px solid whitesmoke;
-  }
+.DescriptionBox table
+{
+    margin: auto;
+    width: 70%;
+    position: relative;
+}
+.tableHeader
+{
+    font-weight: bold;
+}
+.tableConfirmed
+{
+    color: #00FF85;
+}
+.tableDead
+{
+    color: #FF003D;
+}
+.tableRecovered
+{
+    color: #00B2FF;
+}
