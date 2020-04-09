@@ -48,19 +48,19 @@ body
 }
 .todayConfirmedBox
 {
-    border-color: #00FF85;
+    border-color: #00B2FF;
 }
 .todayConfirmedInfo
 {
-    background-color: #00FF85;
+    background-color: #00B2FF;
 }
 .todayRecoveredBox
 {
-    border-color: #00B2FF;
+    border-color: #00FF85; 
 }
 .todayRecoveredInfo
 {
-    background-color: #00B2FF;
+    background-color: #00FF85;
 }
 .todayDeadBox
 {
@@ -89,7 +89,7 @@ body
 }
 .tableConfirmed
 {
-    color: #00FF85;
+    color: #00B2FF;
 }
 .tableDead
 {
@@ -97,7 +97,7 @@ body
 }
 .tableRecovered
 {
-    color: #00B2FF;
+    color: #00FF85;
 }
 .table{
     overflow-y: scroll;
