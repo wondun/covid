@@ -105,13 +105,6 @@ body
     width: 70vw;
 }
 
-@media only screen and (max-width: 600px) {
-    body {
-      background-color: lightblue;
-      
-    }
-  }
-
   /* width */
 ::-webkit-scrollbar {
     width: 20px;
