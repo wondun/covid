@@ -142,13 +142,11 @@ body
         overflow-y: unset;
         height: 75vh;
         width: 70vw;
-
     }
 
     .latest
     {
         position: unset;
-       margin-left: 54px;
-
+        margin-left: 54px;
     }
     }
