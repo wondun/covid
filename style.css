@@ -129,3 +129,22 @@ body
     ::-webkit-scrollbar-thumb:active {
     background: #09ba67;
   }
+
+  @media only screen and (max-width: 600px) {
+
+    .DescriptionBox
+    {
+        top:1039px;
+    }
+
+    .table{
+        overflow-y: unset;
+        height: 75vh;
+        width: 70vw;
+    }
+
+    .latest
+    {
+    margin-left: 54px;
+    }
+    }
