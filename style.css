@@ -74,7 +74,6 @@ body
 {
     position: absolute;
     left: calc(30vh + 50px);
-    width: calc(100vw - 30vh - 30px);
     text-align: center;
 }
 .DescriptionBox table
@@ -101,7 +100,7 @@ body
 }
 .table{
     overflow-y: scroll;
-    height: 75vh;
+    height: 77vh;
     width: 70vw;
 }
 
@@ -118,18 +117,14 @@ body
    
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: rgba(0, 255, 136, 0.5); 
+    background: rgba(255, 255, 255, 0.85); 
     border-radius: 10px;
   }
   
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background: #169463;
+    background: rgba(255, 255, 255, 0.98); 
   }  
-  /* Handle on active */
-    ::-webkit-scrollbar-thumb:active {
-    background: #09ba67;
-  }
 th,td{
   padding:5px 0;
 }
