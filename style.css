@@ -133,6 +133,14 @@ body
 th,td{
   padding:5px 0;
 }
+
+.tableHeader th
+{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-color: black;
+}
   @media only screen and (max-width: 600px) {
 
     .DescriptionBox
