@@ -143,13 +143,14 @@ th,td{
     box-shadow: inset 0 0 18px 7px black;
 }
 .chart{
-    width:35vw; margin: 0 auto;
+    width:35vw;
+    margin: 0 auto;
 }
   @media only screen and (max-width: 600px) {
 
     .DescriptionBox
     {
-        margin-top: 20px;
+        margin-top: 261px;
         left: calc(10vh - 10px);
         position: unset;
     }
@@ -158,6 +159,7 @@ th,td{
         
         height: 75vh;
         width: 70vw;
+        overflow-y: unset;
     }
 
     .latest
@@ -170,7 +172,19 @@ th,td{
         padding:5px 10px;
       }
 
-      .chart, .myChart{
-          width: 100vw;
+    .chart{
+            width: 100vw;
+            margin: 0 auto;
+            height: 35vh;
+            top: 727px;
+            left: 95px;
+            position: absolute;
       }
+
+    canvas {
+ 
+        display: block;
+        height: 234px;
+        width: 222px;
+  }
     }
