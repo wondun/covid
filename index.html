@@ -116,8 +116,21 @@
             maintainAspectRatio:false,
           }
       });
-          chart.canvas.parentNode.style.width = '50vw';
+      function myFunction(x) {
+        if (x.matches) { // If media query matches
+          chart.canvas.parentNode.style.width = '90vw';
           chart.canvas.parentNode.style.height = '35vh';
+       } else {
+        chart.canvas.parentNode.style.width = '50vw';
+          chart.canvas.parentNode.style.height = '35vh';
+        }
+      }
+
+      var x = window.matchMedia("(max-width: 600px)")
+      myFunction(x) // Call listener function at run time
+      x.addListener(myFunction) // Attach listener function on state changes
+
+
     });
   }
 )
