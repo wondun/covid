@@ -87,17 +87,13 @@
     var ctx = document.getElementById('myChart').getContext('2d'); 
       
       var chart = new Chart(ctx, {
-          // The type of chart we want to create
           type: 'line',
-      
-          // The data for our dataset
           data: {
               labels: [...data.date],
               datasets: [{
-                label: 'Zakażeni',
+                  label: 'Zakażeni',
                   borderColor: '#00B2FF',
                   data: [...data.confirmed],
-
               },
               {
                   label: 'Wyleczeni',
@@ -110,8 +106,7 @@
                   data: [...data.deaths],
               }]
           },
-      
-          // Configuration options go here
+          // Configuration options go here https://www.chartjs.org/docs/latest/general/interactions/events.html
           options: {
 
             legend: {
