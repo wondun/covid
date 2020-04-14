@@ -6,6 +6,7 @@
     <title>COVID-19 STATS</title>
     <link rel="shortcut icon" href="favicon.png" />
     <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 </head>
 <body>
 
@@ -22,8 +23,10 @@
         </tr>
        </table>
       </div>
+      <div class="chart">
+        <canvas id="myChart" ></canvas>
+        </div>
   </div>
-
 
 <script>
    fetch("https://pomber.github.io/covid19/timeseries.json").then(res=>res.json()).then(res=>{
@@ -54,7 +57,23 @@
       </div>
       `;
     
+      const data = {
+       date: [],
+       confirmed: [],
+       recovered: [],
+       deaths: []
+     }
+
+     res["Poland"].forEach(({ date, confirmed, recovered, deaths }) =>{
+    data.date.push(date)
+    data.confirmed.push(confirmed)
+    data.recovered.push(recovered)
+    data.deaths.push(deaths)
+    });
+
+
     res["Poland"].reverse().forEach(({ date, confirmed, recovered, deaths }) =>{
+    
     let table=document.querySelector("table")
     table.innerHTML+=`<tr>
     <td> ${date} </td>
@@ -62,9 +81,56 @@
     <td> ${recovered} </td>
     <td> ${deaths} </td>
     </tr>`;
+    
+
+    
+    var ctx = document.getElementById('myChart').getContext('2d'); 
+      
+      var chart = new Chart(ctx, {
+          // The type of chart we want to create
+          type: 'line',
+      
+          // The data for our dataset
+          data: {
+              labels: [...data.date],
+              datasets: [{
+                label: 'Zakażeni',
+                  borderColor: '#00B2FF',
+                  data: [...data.confirmed],
+
+              },
+              {
+                  label: 'Wyleczeni',
+                  borderColor: '#00FF85',
+                  data: [...data.recovered],
+              },
+              {
+                  label: 'Zgony',
+                  borderColor: '#FF003D',
+                  data: [...data.deaths],
+              }]
+          },
+      
+          // Configuration options go here
+          options: {
+
+            legend: {
+            display: false,
+            },
+          
+            maintainAspectRatio:false,
+          }
+      });chart.canvas.parentNode.style.width = '50vw';
+  chart.canvas.parentNode.style.height = '35vh';
+
+
+
     });
   }
 )
+
+
+
 </script>
 
 </body>

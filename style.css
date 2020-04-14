@@ -100,8 +100,9 @@ body
 }
 .table{
     overflow-y: scroll;
-    height: 77vh;
+    height: 40vh;
     width: 70vw;
+    margin-bottom: 37px;
 }
 
   /* width */
@@ -141,6 +142,9 @@ th,td{
     background-color: #722954;
     box-shadow: inset 0 0 18px 7px black;
 }
+.chart{
+    width:35vw; margin: 0 auto;
+}
   @media only screen and (max-width: 600px) {
 
     .DescriptionBox
@@ -151,7 +155,7 @@ th,td{
     }
 
     .table{
-        overflow-y: unset;
+        
         height: 75vh;
         width: 70vw;
     }
@@ -164,5 +168,9 @@ th,td{
 
     th,td{
         padding:5px 10px;
+      }
+
+      .chart, .myChart{
+          width: 100vw;
       }
     }
