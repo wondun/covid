@@ -151,20 +151,23 @@ th,td{
     .DescriptionBox
     {
         margin-top: 20px;
-        left: calc(10vh - 79px);
+        left: 0;
         display: flex;
         flex-direction: column-reverse;
+    }
+    .DescriptionBox table{
+        width: unset;
     }
 
     .table{
         
         height: 75vh;
-        width: 70vw;
+        width: 100vw;
+        margin: 0 auto;
         overflow-y: unset;
         display: flex;
         flex-direction: column;
-        margin-left: 6vw;
-        margin-right: 39vw;
+
     }
 
     .latest
