@@ -163,8 +163,8 @@ th,td{
         overflow-y: unset;
         display: flex;
         flex-direction: column;
-        margin-left: 4vw;
-        margin-right: 4vw;
+        margin-left: 6vw;
+        margin-right: 39vw;
     }
 
     .latest
