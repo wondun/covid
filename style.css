@@ -181,7 +181,7 @@ th,td{
       }
 
     .chart{
-            width: 100vw;
+            width: unset;
             margin: 0 auto;
             height: 35vh;
             display: flex;
