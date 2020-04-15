@@ -150,9 +150,10 @@ th,td{
 
     .DescriptionBox
     {
-        margin-top: 261px;
-        left: calc(10vh - 10px);
-        position: unset;
+        margin-top: 20px;
+        left: calc(10vh - 79px);
+        display: flex;
+        flex-direction: column-reverse;
     }
 
     .table{
@@ -160,6 +161,8 @@ th,td{
         height: 75vh;
         width: 70vw;
         overflow-y: unset;
+        display: flex;
+        flex-direction: column;
     }
 
     .latest
@@ -176,9 +179,10 @@ th,td{
             width: 100vw;
             margin: 0 auto;
             height: 35vh;
-            top: 699px;
-            left: 14px;
-            position: absolute;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+            margin-left: 30px;
       }
 
     canvas {
