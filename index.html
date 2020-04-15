@@ -57,21 +57,6 @@
       </div>
       `;
     
-      const data = {
-       date: [],
-       confirmed: [],
-       recovered: [],
-       deaths: []
-     }
-
-     res["Poland"].forEach(({ date, confirmed, recovered, deaths }) =>{
-    data.date.push(date)
-    data.confirmed.push(confirmed)
-    data.recovered.push(recovered)
-    data.deaths.push(deaths)
-    });
-
-
     res["Poland"].reverse().forEach(({ date, confirmed, recovered, deaths }) =>{
     
     let table=document.querySelector("table")
@@ -81,12 +66,25 @@
     <td> ${recovered} </td>
     <td> ${deaths} </td>
     </tr>`;
-    
+    });
 
-    
-    var ctx = document.getElementById('myChart').getContext('2d'); 
+    const data = {
+       date: [],
+       confirmed: [],
+       recovered: [],
+       deaths: []
+     }
+
+    res["Poland"].reverse().forEach(({ date, confirmed, recovered, deaths }) =>{
+    data.date.push(date)
+    data.confirmed.push(confirmed)
+    data.recovered.push(recovered)
+    data.deaths.push(deaths)
+    });
+
+     let ctx = document.getElementById('myChart').getContext('2d'); 
       
-      var chart = new Chart(ctx, {
+     let chart = new Chart(ctx, {
           type: 'line',
           data: {
               labels: [...data.date],
@@ -129,9 +127,6 @@
       var x = window.matchMedia("(max-width: 600px)")
       myFunction(x) // Call listener function at run time
       x.addListener(myFunction) // Attach listener function on state changes
-
-
-    });
   }
 )
 </script>
