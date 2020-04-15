@@ -163,6 +163,7 @@ th,td{
         overflow-y: unset;
         display: flex;
         flex-direction: column;
+         margin-left: 4vw
     }
 
     .latest
