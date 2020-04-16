@@ -59,12 +59,14 @@
     
     res["Poland"].reverse().forEach(({ date, confirmed, recovered, deaths }) =>{
     
+    let difference = res.Poland[res.Poland.length - 2].confirmed - res.Poland[res.Poland.length - 1].confirmed;
+
     let table=document.querySelector("table")
     table.innerHTML+=`<tr>
     <td> ${date} </td>
-    <td> ${confirmed} </td>
-    <td> ${recovered} </td>
-    <td> ${deaths} </td>
+    <td> ${confirmed} (+${difference})</td>
+    <td> ${recovered} (+${difference})</td>
+    <td> ${deaths} (+${difference})</td>
     </tr>`;
     });
 
@@ -92,16 +94,22 @@
                   label: 'Zakażeni',
                   borderColor: '#00B2FF',
                   data: [...data.confirmed],
+                  borderWidth:'3',
+                  pointRadius:'false',
               },
               {
                   label: 'Wyleczeni',
                   borderColor: '#00FF85',
                   data: [...data.recovered],
+                  borderWidth:'3',
+                  pointRadius:'false',
               },
               {
                   label: 'Zgony',
                   borderColor: '#FF003D',
                   data: [...data.deaths],
+                  borderWidth:'3',
+                  pointRadius:'false',
               }]
           },
           // Configuration options go here https://www.chartjs.org/docs/latest/general/interactions/events.html
