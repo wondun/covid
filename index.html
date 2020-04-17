@@ -69,7 +69,7 @@
        deaths: []
      }
 
-    res["Poland"].reverse().forEach(({ date, confirmed, recovered, deaths }) =>{
+    res["Poland"].forEach(({ date, confirmed, recovered, deaths }) =>{
     data.date.push(date)
     data.confirmed.push(confirmed)
     data.recovered.push(recovered)
