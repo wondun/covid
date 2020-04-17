@@ -57,18 +57,10 @@
       </div>
       `;
     
-    res["Poland"].reverse().forEach(({ date, confirmed, recovered, deaths }) =>{
-    
-    let difference = res.Poland[res.Poland.length - 2].confirmed - res.Poland[res.Poland.length - 1].confirmed;
 
-    let table=document.querySelector("table")
-    table.innerHTML+=`<tr>
-    <td> ${date} </td>
-    <td> ${confirmed} (+${difference})</td>
-    <td> ${recovered} (+${difference})</td>
-    <td> ${deaths} (+${difference})</td>
-    </tr>`;
-    });
+
+    
+  
 
     const data = {
        date: [],
@@ -83,6 +75,8 @@
     data.recovered.push(recovered)
     data.deaths.push(deaths)
     });
+
+
 
      let ctx = document.getElementById('myChart').getContext('2d'); 
       
@@ -136,6 +130,25 @@
       var x = window.matchMedia("(max-width: 600px)")
       myFunction(x) // Call listener function at run time
       x.addListener(myFunction) // Attach listener function on state changes
+
+      let table=document.querySelector("table")
+
+    const temp = res["Poland"];
+    temp.forEach((e, i) => {
+      let difference = {
+        confirmed: temp[i].confirmed - temp[i + 1].confirmed,
+        recovered: temp[i].recovered - temp[i + 1].recovered,
+        deaths: temp[i].deaths - temp[i + 1].deaths
+      }
+      let confirmedDiff = temp[i].confirmed - temp[i + 1].confirmed;
+      let table = document.querySelector("table");
+      table.innerHTML += `<tr>
+    <td> ${e.date} </td>
+    <td> ${e.confirmed} (+${difference.confirmed})</td>
+    <td> ${e.recovered} (+${difference.recovered})</td>
+    <td> ${e.deaths} (+${difference.deaths})</td>
+    </tr>`;
+    });
   }
 )
 </script>
