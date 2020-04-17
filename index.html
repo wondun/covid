@@ -77,7 +77,6 @@
     });
 
 
-
      let ctx = document.getElementById('myChart').getContext('2d'); 
       
      let chart = new Chart(ctx, {
@@ -131,9 +130,17 @@
       myFunction(x) // Call listener function at run time
       x.addListener(myFunction) // Attach listener function on state changes
 
-      let table=document.querySelector("table")
+     
+  }
+)
 
-    const temp = res["Poland"];
+
+
+fetch("https://pomber.github.io/covid19/timeseries.json").then(res=>res.json()).then(res=>{
+let table=document.querySelector("table")
+      res["Poland"].forEach(({ date, confirmed, recovered, deaths }) =>{
+
+    const temp = res["Poland"].reverse();
     temp.forEach((e, i) => {
       let difference = {
         confirmed: temp[i].confirmed - temp[i + 1].confirmed,
@@ -149,7 +156,10 @@
     <td> ${e.deaths} (+${difference.deaths})</td>
     </tr>`;
     });
-  }
+    
+  });
+
+}
 )
 </script>
 
