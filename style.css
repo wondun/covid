@@ -132,7 +132,7 @@ body
     background: rgba(255, 255, 255, 0.78);
   }  
 th,td{
-  padding:5px 0;
+    padding:5px 0;
 }
 
 .tableHeader th
