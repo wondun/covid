@@ -53,6 +53,7 @@ body
 .todayConfirmedInfo
 {
     background-color: #00B2FF;
+    font-size: 20px;
 }
 .todayRecoveredBox
 {
@@ -61,6 +62,7 @@ body
 .todayRecoveredInfo
 {
     background-color: #00FF85;
+    font-size: 20px;
 }
 .todayDeadBox
 {
@@ -69,6 +71,7 @@ body
 .todayDeadInfo
 {
     background-color: #FF003D;
+    font-size: 20px;
 }
 .DescriptionBox
 {
