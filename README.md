@@ -1,1 +1,1 @@
-# jakubgalek.github.io
+# jakubgalek.github.io/covid/
