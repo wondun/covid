@@ -1,0 +1,74 @@
+.latest
+{
+    display: grid;
+    width: 30vh;
+    height: 80vh;
+    grid-template-rows: 20px 1fr 1fr 1fr;
+    position: fixed;
+    left: 30px;
+}
+.date
+{
+    color: #00FF85;
+}
+.todayBox
+{
+    padding: 3vh;
+    border: 1px solid white;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    margin: 20px 0;
+}
+.todayInfo
+{
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: calc(100% + 2px);
+    height: 50%;
+    border-radius: 10px;
+    padding: 2.9vh;
+    color: black;
+}
+.todayConfirmedBox
+{
+    border-color: #00B2FF;
+}
+.todayConfirmedInfo
+{
+    background-color: #00B2FF;
+    font-size: 20px;
+}
+.todayRecoveredBox
+{
+    border-color: #00FF85;
+}
+.todayRecoveredInfo
+{
+    background-color: #00FF85;
+    font-size: 20px;
+}
+.todayDeadBox
+{
+    border-color: #FF003D;
+}
+.todayDeadInfo
+{
+    background-color: #FF003D;
+    font-size: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .latest
+    {
+        position: unset;
+        margin-left: 54px;
+    }
+
+    .todayInfo
+    {
+        padding: 1.9vh;
+    }
+}
