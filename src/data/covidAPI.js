@@ -3,20 +3,14 @@ const getCovidData = async () => {
     .then((response) => response.json())
     .then((data) => {
       const { Poland } = data;
-
+      let flaga=0;
       const chart = {
         date: [],
-        confirmed: [],
-        recovered: [],
-        deaths: []
+        differenceC: [],
+        differenceCbar:[],
+        differenceR: [],
+        differenceD: []
       };
-
-      Poland.forEach(({ date, confirmed, recovered, deaths }) => {
-        chart.date.push(date);
-        chart.confirmed.push(confirmed);
-        chart.recovered.push(recovered);
-        chart.deaths.push(deaths);
-      });
 
       const table = {
         date: [],
@@ -29,14 +23,30 @@ const getCovidData = async () => {
         .reverse()
         .forEach(({ date, confirmed, recovered, deaths }, index, arr) => {
           table.date.push(date);
-
+          if (flaga%7===0)
+          chart.date.push(date);
+       
           const previous = arr[index + 1] || 0;
+
           const differenceC = confirmed - previous.confirmed;
           table.confirmed.push({ confirmed, differenceC });
+         
+          if (flaga%7===0)
+          chart.differenceC.push(differenceC);
+
           const differenceR = recovered - previous.recovered;
           table.recovered.push({ recovered, differenceR });
+          
+          if (flaga%7===0)
+          chart.differenceR.push(differenceR);
+
           const differenceD = deaths - previous.deaths;
           table.deaths.push({ deaths, differenceD });
+          
+          if (flaga%7===0)
+          chart.differenceD.push(differenceD);
+          
+          flaga++;
         });
 
       const latestState = Poland.pop();
@@ -48,9 +58,13 @@ const getCovidData = async () => {
         deaths: previousDeaths,
         recovered: previousRecovered
       } = previousLatestState;
+
       const differenceC = confirmed - previousConfirmed;
       const differenceR = recovered - previousRecovered;
       const differenceD = deaths - previousDeaths;
+
+
+
 
       return {
         date,

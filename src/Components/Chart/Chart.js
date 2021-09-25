@@ -4,9 +4,10 @@ import { Line } from "react-chartjs-2";
 const Chart = ({
     chart = {
       date: [],
-      confirmed: [],
-      recovered: [],
-      deaths: []
+      differenceC: [],
+      differenceR: [],
+      differenceD: []
+
     }
   }) => {
     return (
@@ -14,37 +15,55 @@ const Chart = ({
         <Line
           options={{
             legend: {
-              display: false
+              display: true
             },
-            maintainAspectRatio: false
+            maintainAspectRatio: false,
+          
+            scales: {
+              xAxes: [{
+                type: 'time',
+                ticks: {
+                    autoSkip: true,
+                    maxTicksLimit: 100,
+                    reverse: false
+                },
+                time: {
+                  unit: 'quarter'
+              }         
+              }],
+ 
+            }
           }}
           data={{
             labels: [...chart.date],
             datasets: [
               {
-                label: "Zakażeni",
+                label: "Nowe przypadki",
                 borderColor: "#00B2FF",
-                data: [...chart.confirmed],
+                data: [...chart.differenceC],
                 borderWidth: "3",
-                pointRadius: "false"
+                pointRadius: "true",
+                grace: '2000'
               },
               {
                 label: "Wyleczeni",
                 borderColor: "#00FF85",
-                data: [...chart.recovered],
+                data: [...chart.differenceR],
                 borderWidth: "3",
-                pointRadius: "false"
+                pointRadius: "true",
+                hidden: "true"
               },
               {
                 label: "Zgony",
                 borderColor: "#FF003D",
-                data: [...chart.deaths],
+                data: [...chart.differenceD],
                 borderWidth: "3",
-                pointRadius: "false"
+                pointRadius: "true",
+                hidden: "true"
               }
-            ]
+]
           }}
-          type="line"
+          type="invertedLinear"
         />
         {/* <canvas id="myChart"></canvas> */}
       </div>

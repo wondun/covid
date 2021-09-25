@@ -15,6 +15,8 @@ const Table = ({
     recovered: recoveredData,
     deaths: deathsData
   } = table;
+
+ 
   return (
     <div className="table">
       <table>
@@ -28,6 +30,7 @@ const Table = ({
         </thead>
 
         {date.map((date, index) => {
+       
           const { confirmed, differenceC } = confirmedData[index];
           const { deaths, differenceD } = deathsData[index];
           const { recovered, differenceR } = recoveredData[index];
