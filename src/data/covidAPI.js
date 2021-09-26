@@ -63,9 +63,6 @@ const getCovidData = async () => {
       const differenceR = recovered - previousRecovered;
       const differenceD = deaths - previousDeaths;
 
-
-
-
       return {
         date,
         confirmed,

@@ -17,7 +17,6 @@ const Chart = ({
             display: true
           },
           maintainAspectRatio: false,
-
           scales: {
             xAxes: [
               {
